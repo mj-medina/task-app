@@ -43,6 +43,10 @@ export default {
     }
   },
   methods: {
+    /**
+     * Login user
+     * @returns {Promise<void>}
+     */
     async login () {
       try {
         await this.$auth.loginWith('laravelSanctum', {

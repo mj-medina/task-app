@@ -72,9 +72,16 @@ export default {
     }
   },
   methods: {
+    /**
+     * Close modal
+     */
     closeModal () {
       this.$store.dispatch('task-modal/closeModal')
     },
+    /**
+     * Trigger submit button on modal
+     * @returns {Promise<void>}
+     */
     async submit () {
       try {
         if (this.modal.modalType === 'add') {

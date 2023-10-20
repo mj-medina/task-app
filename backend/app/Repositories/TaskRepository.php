@@ -4,13 +4,29 @@ namespace App\Repositories;
 
 use App\Models\Task;
 
+/**
+ * Class TaskRepository
+ *
+ * @author Martin Justin Medina <martin.justin04@gmail.com>
+ */
 class TaskRepository
 {
-    public function getTasksByUserId($userId)
+    /**
+     * Get task by user ID
+     * @param string $userId
+     * @return mixed
+     */
+    public function getTasksByUserId(string $userId)
     {
         return Task::where('user_id', $userId)->get();
     }
 
+    /**
+     * Create a task
+     * @param $user
+     * @param $data
+     * @return Task
+     */
     public function createTask($user, $data)
     {
         $task = new Task($data);
@@ -19,7 +35,12 @@ class TaskRepository
         return $task;
     }
 
-    public function editTask($data)
+    /**
+     * Edit task
+     * @param array $data
+     * @return false
+     */
+    public function editTask(array $data)
     {
         $task = Task::find($data['id']);
 
@@ -31,12 +52,22 @@ class TaskRepository
         return $task;
     }
 
+    /**
+     * Delete user task
+     * @param $taskId
+     * @return mixed
+     */
     public function deleteTask($taskId)
     {
         return Task::where('id', $taskId)->delete();
     }
 
-    public function markTask($data)
+    /**
+     * Mark task
+     * @param array $data
+     * @return false
+     */
+    public function markTask(array $data)
     {
         $task = Task::find($data['id']);
 

@@ -47,6 +47,10 @@ export default {
     }
   },
   methods: {
+    /**
+     * Register user account
+     * @returns {Promise<void>}
+     */
     async register () {
       try {
         await this.$axios.post('/api/register', {

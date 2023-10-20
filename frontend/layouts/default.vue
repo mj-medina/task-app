@@ -24,6 +24,10 @@
 <script>
 export default {
   methods: {
+    /**
+     * Logouts user
+     * @returns {Promise<void>}
+     */
     async logout () {
       try {
         await this.$auth.logout()

@@ -7,6 +7,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class TaskController
+ *
+ * @author Martin Justin Medina <martin.justin04@gmail.com>
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;

@@ -45,9 +45,17 @@ export default {
     }
   },
   methods: {
+    /**
+     * Opens edit task modal
+     */
     openEditTaskModal () {
       this.$store.dispatch('task-modal/openModal', { type: 'edit', task: this.task })
     },
+
+    /**
+     * Deletes user task
+     * @returns {Promise<void>}
+     */
     async deleteTask () {
       try {
         await this.$axios.post('/api/deleteTask', {
@@ -58,6 +66,11 @@ export default {
         console.error(error)
       }
     },
+
+    /**
+     * Marks tasks as complete or incomplete
+     * @returns {Promise<void>}
+     */
     async markTask () {
       try {
         await this.$axios.post('/api/markTask', {

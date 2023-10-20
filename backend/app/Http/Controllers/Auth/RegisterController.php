@@ -6,8 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+/**
+ * Class RegisterController
+ *
+ * @author Martin Justin Medina <martin.justin04@gmail.com>
+ */
 class RegisterController extends Controller
 {
+    /**
+     * Invoke function
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function __invoke(Request $request)
     {
         $request->validate([

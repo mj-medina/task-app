@@ -5,8 +5,19 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+/**
+ * Class LoginController
+ *
+ * @author Martin Justin Medina <martin.justin04@gmail.com>
+ */
 class LoginController extends Controller
 {
+    /**
+     * Invoke function
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function __invoke(Request $request)
     {
         $this->validate($request, [

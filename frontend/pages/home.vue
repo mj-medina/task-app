@@ -29,9 +29,16 @@ export default {
     this.getUserTask()
   },
   methods: {
+    /**
+     * Opens create task modal
+     */
     openCreateTaskModal () {
       this.$store.dispatch('task-modal/openModal', { type: 'add', task: null })
     },
+    /**
+     * Get user task
+     * @returns {Promise<void>}
+     */
     async getUserTask () {
       const response = await this.$axios.get('/api/getTask')
       this.tasks = response.data
