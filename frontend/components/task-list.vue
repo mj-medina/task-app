@@ -1,6 +1,9 @@
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     <TaskItem v-for="(task, index) in tasks" :key="index" :task="task" />
+    <p v-if="tasks.length === 0">
+      Add task by clicking the (+) button on the upper right.
+    </p>
   </div>
 </template>
 

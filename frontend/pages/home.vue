@@ -22,14 +22,7 @@ export default {
   },
   data () {
     return {
-      tasks: [
-        {
-          title: 'Task 1',
-          description: 'Description for Task 1',
-          due_date: '2023-12-31',
-          completed: false
-        }
-      ]
+      tasks: []
     }
   },
   mounted () {
@@ -42,7 +35,6 @@ export default {
     async getUserTask () {
       const response = await this.$axios.get('/api/getTask')
       this.tasks = response.data
-      console.log(response.data)
     }
   }
 }

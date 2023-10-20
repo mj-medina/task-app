@@ -14,11 +14,11 @@ class Task extends Model
         'title',
         'description',
         'due_date',
-        'completion_status'
+        'completed'
     ];
 
     protected $casts = [
-        'completion_status' => 'boolean'
+        'completed' => 'boolean'
     ];
 
     public function getDueDateAttribute($value)

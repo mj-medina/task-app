@@ -19,9 +19,9 @@ class TaskRepository
         return $task;
     }
 
-    public function editTask($taskId, $data)
+    public function editTask($data)
     {
-        $task = Task::find($taskId);
+        $task = Task::find($data['id']);
 
         if (!$task) {
             return false;
@@ -36,15 +36,15 @@ class TaskRepository
         return Task::where('id', $taskId)->delete();
     }
 
-    public function markTask($taskId, $completed)
+    public function markTask($data)
     {
-        $task = Task::find($taskId);
+        $task = Task::find($data['id']);
 
         if (!$task) {
             return false;
         }
 
-        $task->update(['completed' => $completed]);
+        $task->update($data);
         return $task;
     }
 }

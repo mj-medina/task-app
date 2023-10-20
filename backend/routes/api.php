@@ -21,8 +21,11 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-    Route::post('/create', '\App\Http\Controllers\TaskController@createTask');
     Route::get('/getTask', '\App\Http\Controllers\TaskController@getTask');
+    Route::post('/createTask', '\App\Http\Controllers\TaskController@createTask');
+    Route::post('/editTask', '\App\Http\Controllers\TaskController@editTask');
+    Route::post('/deleteTask', '\App\Http\Controllers\TaskController@deleteTask');
+    Route::post('/markTask', '\App\Http\Controllers\TaskController@markTask');
 });
 
 Route::get('/token', function () {
