@@ -31,6 +31,7 @@ export default {
     async logout () {
       try {
         await this.$auth.logout()
+        await this.$router.push('/login')
       } catch (error) {
         console.log(error)
       }

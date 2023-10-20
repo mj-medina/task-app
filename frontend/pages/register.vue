@@ -66,7 +66,7 @@ export default {
           }
         })
 
-        await this.$router.push('home')
+        await this.$router.push('/')
       } catch (e) {}
     }
   }

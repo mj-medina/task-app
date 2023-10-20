@@ -42,6 +42,11 @@ export default {
       password: ''
     }
   },
+  mounted () {
+    if (this.$auth.loggedIn) {
+      this.$router.push('/')
+    }
+  },
   methods: {
     /**
      * Login user
@@ -56,7 +61,7 @@ export default {
           }
         })
 
-        await this.$router.push('home')
+        await this.$router.push('/')
       } catch (error) {}
     }
   }

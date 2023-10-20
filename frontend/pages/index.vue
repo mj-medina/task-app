@@ -20,6 +20,7 @@ export default {
     TaskList,
     TaskModal
   },
+  middleware: 'auth',
   data () {
     return {
       tasks: []
