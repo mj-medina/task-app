@@ -20,13 +20,15 @@ export default {
     TaskList,
     TaskModal
   },
-  middleware: 'auth',
   data () {
     return {
       tasks: []
     }
   },
   mounted () {
+    if (!this.$auth.loggedIn) {
+      this.$router.push('/login')
+    }
     this.getUserTask()
   },
   methods: {
