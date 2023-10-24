@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    <TaskItem v-for="(task, index) in tasks" :key="index" :task="task" />
+    <TaskItem v-for="(task, index) in tasks" :key="index" :task="task" @reload="reloadTaskList" />
     <p v-if="tasks.length === 0">
       Add task by clicking the (+) button on the upper right.
     </p>
@@ -18,6 +18,14 @@ export default {
     tasks: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    /**
+     * Emit reloadTaskList event
+     */
+    reloadTaskList () {
+      this.$emit('reloadTaskList')
     }
   }
 }

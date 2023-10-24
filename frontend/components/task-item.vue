@@ -61,10 +61,8 @@ export default {
         await this.$axios.post('/api/deleteTask', {
           id: this.task.id
         })
-        window.location.reload()
-      } catch (error) {
-        console.error(error)
-      }
+        this.$emit('reload')
+      } catch (error) {}
     },
 
     /**
@@ -77,10 +75,8 @@ export default {
           id: this.task.id,
           completed: this.task.completed === false
         })
-        window.location.reload()
-      } catch (error) {
-        console.error(error)
-      }
+        this.$emit('reload')
+      } catch (error) {}
     }
   }
 }

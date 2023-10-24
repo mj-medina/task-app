@@ -8,8 +8,8 @@
         <i class="fas fa-plus-circle text-blue-500 text-4xl" @click="openCreateTaskModal">&nbsp;</i>
       </button>
     </div>
-    <TaskList :tasks="tasks" />
-    <TaskModal v-if="modal.isModalOpen" />
+    <TaskList :tasks="tasks" @reloadTaskList="getUserTask" />
+    <TaskModal v-if="modal.isModalOpen" @reloadTaskList="getUserTask" />
   </div>
 </template>
 <script>

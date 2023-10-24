@@ -93,7 +93,7 @@ export default {
           })
         }
         this.closeModal()
-        window.location.reload()
+        this.$emit('reloadTaskList')
       } catch (error) {}
     }
   }
