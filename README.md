@@ -5,6 +5,7 @@ A Simple task app made with Laravel and Nuxt.
 
 1. Clone this repository: https://github.com/mj-medina/task-app.git
 2. Create a MySQL database and name it `task` (You can adjust the database name in `.env` file).
+Note: Create .env file. (Copy .env.example)
 
 3. **Backend Setup**
 
